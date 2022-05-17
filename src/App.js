@@ -42,8 +42,7 @@ function App() {
             <div className="d-flex justify-content-center gap-5 mb-2">
                 <input type="number" min="0" value={firstInput}
                        onChange={handleFirstInput}/>
-                <FirstDropdown handleFirstInput={handleFirstInput}
-                               firstSelect={(firstSelected) => setFirstSelected(firstSelected)}/>
+                <FirstDropdown firstSelect={(firstSelected) => setFirstSelected(firstSelected)}/>
             </div>
             <div className="d-flex justify-content-center gap-5">
                 <input type="number" min="0" value={secondInput}
