@@ -40,12 +40,12 @@ function App() {
             </h6>
             <h3 className='text-primary'>{Number(secondInput).toFixed(2)} {' '} {secondSelected}</h3>
             <div className="d-flex justify-content-center gap-5 mb-2">
-                <input type="number" min="0" value={Number(firstInput).toFixed(2)}
+                <input type="number" min="0" value={firstInput}
                        onChange={handleFirstInput}/>
                 <FirstDropdown firstSelect={(firstSelected) => setFirstSelected(firstSelected)}/>
             </div>
             <div className="d-flex justify-content-center gap-5">
-                <input type="number" min="0" value={Number(secondInput).toFixed(2)}
+                <input type="number" min="0" value={secondInput}
                        onChange={handleSecondInput}/>
                 <SecondDropdown secondSelect={(secondSelected) => setSecondSelected(secondSelected)}/>
             </div>
