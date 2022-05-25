@@ -11,26 +11,30 @@ function App() {
     const [firstSelected, setFirstSelected] = useState('AED')
     const [secondSelected, setSecondSelected] = useState('AED')
 
+     const round = (n) =>{
+        return Number(n.toFixed(2))
+    }
+
     useEffect(() => {
         if (firstInput !== 0 || secondInput !== 0) {
-            setSecondInput(firstInput * rates[secondSelected] / rates[firstSelected])
+            setSecondInput(round(firstInput * rates[secondSelected] / rates[firstSelected]))
         }
     }, [firstSelected])
 
     useEffect(() => {
         if (firstInput !== 0 || secondInput !== 0) {
-            setFirstInput(secondInput * rates[firstSelected] / rates[secondSelected])
+            setFirstInput(round(secondInput * rates[firstSelected] / rates[secondSelected]))
         }
     }, [secondSelected])
 
     const handleFirstInput = (e) => {
         setFirstInput((e.target.value))
-        setSecondInput(e.target.value * rates[secondSelected] / rates[firstSelected])
+        setSecondInput(round(e.target.value * rates[secondSelected] / rates[firstSelected]))
     }
 
     const handleSecondInput = (e) => {
         setSecondInput(e.target.value)
-        setFirstInput(e.target.value * rates[firstSelected] / rates[secondSelected])
+        setFirstInput(round(e.target.value * rates[firstSelected] / rates[secondSelected]))
     }
 
     return (
